@@ -154,6 +154,14 @@ if __name__ == '__main__':
         colors = ["lawngreen", "lightseagreen"]
         cam = LinearSegmentedColormap.from_list("mycmap", list(zip(nodes, colors)))
 
+        # ---------------------颜色表设置规则----------------------
+        # 'red': [(0.0, 0.0, 43 / 255.0),    （val0, x0, y0）
+        #         (1.0, 248 / 255.0, 1.0)]   （val1, x1, y1）
+        # val: 0~1.0    代表归一化数据范围
+        # 上面表示的是在val0~val1的数据范围内，
+        # 颜色的值由y0向x1进行渐变
+        # （val0, x0, y0）可以有很多段，进行颜色锚定;
+        # x0, y1可以不用管
         cdict = {'red': [(0.0, 0.0, 43/255.0),
                          # (0.5, 1.0, 1.0),
                          (1.0,  248/255.0, 1.0)],
